@@ -28,6 +28,8 @@ phases:
         _HelixSource: official/dotnet/toolset/$(Build.SourceBranch)
         _OfficialBuildIdArgs: /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
         _PublishArgs: /p:DotNetPublishToBlobFeed=$(_DotNetPublishToBlobFeed)
+                  /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
+                  /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory)
                   /p:DotNetPublishBlobFeedUrl=$(PB_PublishBlobFeedUrl)
                   /p:DotNetPublishBlobFeedKey=$(dotnetfeed-storage-access-key-1)
                   /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
