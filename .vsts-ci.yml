@@ -4,7 +4,7 @@ trigger:
 
 variables:
   _TeamName: Roslyn-Project-System
-  _DotNetArtifactsCategory: .NETCore
+  _DotNetArtifactsCategory: TOOLSET
   ${{ if eq(variables['System.TeamProject'], 'public') }}:
     PB_PublishBlobFeedUrl:
     _DotNetPublishToBlobFeed: false

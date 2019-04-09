@@ -27,7 +27,8 @@ phases:
       ${{ if ne(variables['System.TeamProject'], 'public') }}:
         _HelixSource: official/dotnet/toolset/$(Build.SourceBranch)
         _OfficialBuildIdArgs: /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
-        _PublishArgs: /p:DotNetPublishToBlobFeed=$(_DotNetPublishToBlobFeed)
+        _PublishArgs: /p:DotNetSignType=test  
+                  /p:DotNetPublishToBlobFeed=$(_DotNetPublishToBlobFeed)
                   /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
                   /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory)
                   /p:DotNetPublishBlobFeedUrl=$(PB_PublishBlobFeedUrl)
