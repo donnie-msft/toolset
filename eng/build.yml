@@ -53,7 +53,7 @@ phases:
 
     - ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
       - script: build.cmd
-                  -pack -publish -ci -test -sign
+                  -pack -publish -ci -test
                   -Configuration $(BuildConfig)
                   -Architecture $(BuildArchitecture)
                   $(_PublishArgs)
